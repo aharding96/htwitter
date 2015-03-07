@@ -33,6 +33,9 @@ gem 'simple_form'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#gem for user interface
+gem 'devise'
+
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
