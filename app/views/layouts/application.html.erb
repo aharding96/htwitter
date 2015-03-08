@@ -6,9 +6,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<nav class="navbar navbar-default">
+<body background="../assets/background.jpg">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -25,18 +24,18 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <% if user_signed_in? %>
       <ul class="nav navbar-nav">
-        <li class="active">
-        	<%= link_to "New Tweet", new_tweet_path %>
+        <li>
+        	<%= nav_link "New Tweet", new_tweet_path %>
         	<span class="sr-only">(current)</span></a>
         </li>
-        <li><%= link_to "NewsFeed", tweets_path %></a>
+        <li><%= nav_link "NewsFeed", tweets_path %></a>
         </li>
       </ul>
      <%end%>
       <ul class="nav navbar-nav navbar-right">
         <li>
         <% if user_signed_in? %>
-        <%= link_to "Log Out",destroy_user_session_path, method: :delete %>
+        <%= link_to("Log Out",destroy_user_session_path, method: :delete) %>
         <% else %>
         	<%= link_to "Sign In", new_user_session_path %>
         <% end %>
@@ -71,4 +70,18 @@
 </div>
 
 </body>
+
+<style>
+body{
+    background-color: #525252;
+}
+.centered-form{
+	margin-top: 100px;
+}
+
+.centered-form .panel{
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+</style>
 </html>
