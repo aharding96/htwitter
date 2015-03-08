@@ -16,6 +16,9 @@ class ProfilesController < ApplicationController
 	def profile_params
 		params.require(:profile).permit(:first_name, :picture, :description)
 	end
+	def show
+		@profile = Profile.find(params[:id])
+	end
 end
 
 
